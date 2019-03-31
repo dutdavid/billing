@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2019 at 03:18 PM
+-- Generation Time: Mar 31, 2019 at 10:24 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -40,16 +40,6 @@ CREATE TABLE `appliance` (
   `consumption` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `appliance`
---
-
-INSERT INTO `appliance` (`houseNO`, `applianceID`, `appliancename`, `Quantity`, `Rating_watts`, `hours_used_per_days`, `kilowattperhour_KWH`, `Numberofdays`, `consumption`) VALUES
-(67, 664, 'Nairobi', 15, 0, '25', '59865', 21, '84985'),
-(67, 0, '', 0, 0, '', '', 0, '84985'),
-(67, 0, '', 0, 0, '', '', 0, '84985'),
-(67, 0, '', 0, 0, '', '', 0, '84985');
-
 -- --------------------------------------------------------
 
 --
@@ -64,34 +54,6 @@ CREATE TABLE `bills` (
   `final_amount` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `bills`
---
-
-INSERT INTO `bills` (`houseNO`, `consumption`, `meter_reading`, `total_bills`, `final_amount`) VALUES
-(67, '84985', '536', '9563', '786354');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `contact`
---
-
-CREATE TABLE `contact` (
-  `name` varchar(50) DEFAULT NULL,
-  `company` varchar(50) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `phone` int(11) NOT NULL,
-  `message` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `contact`
---
-
-INSERT INTO `contact` (`name`, `company`, `email`, `phone`, `message`) VALUES
-('David Dut', 'Moringa school', 'dutdavid7@gmail.com', 714378596, '         oihio');
-
 -- --------------------------------------------------------
 
 --
@@ -103,16 +65,6 @@ CREATE TABLE `household` (
   `Occupantname` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `household`
---
-
-INSERT INTO `household` (`houseNO`, `Occupantname`) VALUES
-(67, '6768'),
-(67, ''),
-(67, ''),
-(0, '');
-
 -- --------------------------------------------------------
 
 --
@@ -120,38 +72,12 @@ INSERT INTO `household` (`houseNO`, `Occupantname`) VALUES
 --
 
 CREATE TABLE `users` (
-  `first_name` varchar(50) DEFAULT NULL,
-  `last_name` varchar(50) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `user_name` varchar(50) NOT NULL,
-  `user_type` varchar(50) DEFAULT NULL,
-  `password` varchar(50) DEFAULT NULL,
-  `location` varchar(50) DEFAULT NULL
+  `id` int(10) DEFAULT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `user_type` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`first_name`, `last_name`, `email`, `user_name`, `user_type`, `password`, `location`) VALUES
-('David', 'Dut', 'dutdavid7@gmail.com', 'daudi', 'admin', 'ec2c4mjGAb58ntP', 'Kenya'),
-('Dut', '', NULL, 'Dutdavid', NULL, 'ec2c4mjGAb58ntP', 'Kenya');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `contact`
---
-ALTER TABLE `contact`
-  ADD PRIMARY KEY (`phone`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_name`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
