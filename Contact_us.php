@@ -3,6 +3,7 @@
 	
    <body>
       <h2>Contact Us</h2>
+      <form action="processes/form_processes.php" method = "POST" enctype="multipart/form-data" >
       <form >
          Name:  <input type = "text" name = "name" >
          <br> <br>
@@ -17,8 +18,7 @@
          <textarea rows = "5" cols = "50" name = "message">
          </textarea>
          <br><br>
-         <input type = "submit" name = "submit" value = "Submit"> 
-         <input type = "reset" name = "reset"  value = "Reset">
+         <input type = "submit" name = "post" value = "Submit"> 
       </form>
    </body>
 	

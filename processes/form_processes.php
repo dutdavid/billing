@@ -79,3 +79,23 @@
 
 		$conn->close();
 	}
+
+	
+	if(isset($_POST["post"])){
+		$name = mysqli_real_escape_string($conn, $_POST["name"]);
+		$company = mysqli_real_escape_string($conn, $_POST["company"]);
+		$email = mysqli_real_escape_string($conn, $_POST["email"]);
+		$phone = mysqli_real_escape_string($conn, $_POST["phone"]);
+		$message = mysqli_real_escape_string($conn, $_POST["message"]);
+
+		$contact_insert = "INSERT INTO contact (name, company, email, phone, message) VALUES ('$name', '$company', '$email', '$phone', '$message')";
+
+		if ($conn->query($contact_insert) === TRUE) {
+			header("Location: ../Contact_us.php");
+			exit();
+		} else {
+			echo "Error: " . $contact_insert . "<br />" . $conn->error;
+		}
+
+		$conn->close();
+	}

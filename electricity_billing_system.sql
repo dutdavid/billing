@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2019 at 02:28 PM
+-- Generation Time: Mar 31, 2019 at 03:18 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -74,6 +74,27 @@ INSERT INTO `bills` (`houseNO`, `consumption`, `meter_reading`, `total_bills`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `name` varchar(50) DEFAULT NULL,
+  `company` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `phone` int(11) NOT NULL,
+  `message` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`name`, `company`, `email`, `phone`, `message`) VALUES
+('David Dut', 'Moringa school', 'dutdavid7@gmail.com', 714378596, '         oihio');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `household`
 --
 
@@ -89,7 +110,8 @@ CREATE TABLE `household` (
 INSERT INTO `household` (`houseNO`, `Occupantname`) VALUES
 (67, '6768'),
 (67, ''),
-(67, '');
+(67, ''),
+(0, '');
 
 -- --------------------------------------------------------
 
@@ -118,6 +140,12 @@ INSERT INTO `users` (`first_name`, `last_name`, `email`, `user_name`, `user_type
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`phone`);
 
 --
 -- Indexes for table `users`
