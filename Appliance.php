@@ -1,30 +1,56 @@
-
 <!DOCTYPE html>
-<html>
-	   <body>
-      <h2>Appliance</h2>
-      <form action="processes/form_processes.php" method = "POST" enctype="multipart/form-data" >
+<html lang="en">
+<head>
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-         houseNO:  <input type = "text" name = "houseNO" >
-         <br> <br>
-         ApplianceID: <input type = "text" name = "applianceID" >
-         <br><br>
-         Appliance Name: <input type = "text" name = "appliancename" >
-         <br><br>
-         Quantity: <input type = "number" name = "Quantity">
-         <br><br>
-         Rating(1 kilowatt=1000 watts): <input type = "number" name = "Rating_watts" >
-         <br><br>
-         Hours used per day: <input type="text" name="hours_used_per_days">
-         <br><br>
-         Kilowatt per day: <input type="text" name="kilowattperhour_KWH">
-         <br><br>
-         Number of days: <input type="text" name="Numberofdays">
-         <br><br>
-        consumption:<input type="text" name="consumption">
-        <br><br>
-        <button type="submit" name = "send" class="btn btn-default">Submit</button>
-      </form>
-   </body>
-	
+<div class="container">
+  <h2>Appliances</h2>
+  <form action="processes/form_processes.php" method = "POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" placeholder="Enter house number" name="houseNO">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Appliance ID</label>
+      <input type="number" class="form-control" placeholder="Enter appliance ID" name="applianceID">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Appliance Name:</label>
+      <input type="text" class="form-control" placeholder="Enter appliance name" name="appliancename">
+    <div class="form-group">
+      <label for="pwd">Quantity:</label>
+      <input type="number" class="form-control" placeholder="Enter Quantity" name="Quantity">
+    </div>
+    </div>  <div class="form-group">
+      <label for="pwd">Rating Watts:</label>
+      <input type="number" class="form-control" placeholder="Enter appliance Rating" name="Rating_watts">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Hours Per Day:</label>
+      <input type="number" class="form-control" placeholder="Enter hours_used_per_days" name="hours_used_per_days">
+    </div>
+    <div class="form-group">
+      <label for="pwd">kilowattperhour_KWH:</label>
+      <input type="number" class="form-control" placeholder="Enter kilowattperhour_KWH" name="kilowattperhour_KWH">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Number of days:</label>
+      <input type="number" class="form-control" placeholder="Enter number" name="Numberofdays">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Consumption:</label>
+      <input type="text" class="form-control" placeholder="Enter consumption" name="consumption">
+    </div>
+    <button type="submit" class="btn btn-default" name="send">Submit</button>
+  </form>
+</div>
+
+</body>
 </html>
